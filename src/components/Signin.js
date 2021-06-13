@@ -70,7 +70,14 @@ export default function SignIn({ setName }) {
             label="ニックネーム"
             name="name"
             autoFocus
-            onChange={(e) => {setString(e.target.value)}}
+            onChange={(e) => { setString(e.target.value) }}
+            onKeyDown={(e) => {
+              console.log({ key: e.key });
+              if (e.key === 'Enter') {
+                setName(e.target.value);
+                e.preventDefault();
+              }
+            }}
           />
           <Button
             type="submit"
