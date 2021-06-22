@@ -22,7 +22,7 @@ const MessageField = ({ inputEl, name, setText, text }) => {
 
         if (e.key === 'Enter') {
           // console.log('push message to firebase');
-          pushMessage({ name: 'testさん', text });
+          pushMessage({ name, text });
           setText('');
           e.preventDefault();
         }
